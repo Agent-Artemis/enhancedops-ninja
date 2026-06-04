@@ -1,9 +1,9 @@
 import fs from "fs/promises";
 import path from "path";
 
-// File-based call log for local testing.
+// File-based call log for local testing. /tmp is writable in both local dev and Vercel serverless.
 // Replace with Supabase insert when the DB is wired in.
-const LOG_FILE = path.join(process.cwd(), "call-log.json");
+const LOG_FILE = path.join("/tmp", "retell-call-log.json");
 
 export interface CallLogEntry {
   call_id: string;
